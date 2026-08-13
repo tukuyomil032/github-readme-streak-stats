@@ -19,8 +19,3 @@ docker_tag
 # IDE
 .vscode/
 .idea/
-
-# Not needed in deployment (excess PHP files were pushing
-# the project over Vercel Hobby's 12 Serverless Functions limit)
-tests/
-scripts/
