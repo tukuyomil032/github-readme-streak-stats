@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+// PHP 8.4+ marks implicit-nullable parameters as deprecated. With
+// display_errors on, that notice text leaks into stdout ahead of the
+// SVG/JSON body and corrupts the response. Suppress it here.
+error_reporting(E_ALL & ~E_DEPRECATED);
+ini_set('display_errors', '0');
+
 // load functions
 require_once dirname(__DIR__, 1) . "/vendor/autoload.php";
 require_once "stats.php";
